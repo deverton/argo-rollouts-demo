@@ -8,9 +8,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: {{ .Values.repoUrl }}
+    repoURL: https://github.com/deverton/argo-rollouts-demo
     path: blue-green
-    targetRevision: {{ .Values.targetRevision }}
+    targetRevision: HEAD
   destination:
     name: in-cluster
     namespace: default

@@ -4,8 +4,6 @@ metadata:
   name: bluegreen-demo-preview
   annotations:
     kubernetes.io/ingress.class: alb
-    ingress.kubernetes.io/proxy-body-size: 100M
-    ingress.kubernetes.io/app-root: /
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
 spec:
@@ -13,6 +11,7 @@ spec:
     - http:
         paths:
           - path: /
+            pathType: Prefix
             backend:
               serviceName: bluegreen-demo-preview
               servicePort: 80
